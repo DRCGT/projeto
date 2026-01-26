@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <!--aplicando uma classe-->
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--font inter-->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevLinnks</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!--div caixa genérica onde não tem estilos-->
+    <!--id  seria o identificador do elemento conteiner-->
+    <div id="container">
+      <div id="profile">
+        <!--também posso usar o seguinte comando '#profile'-->
+        <img
+          src="./assets/avatar.png"
+          alt="Foto de um casal se amando fundo mar e montanha"
+        />
+        <!--src surce onde vai colocar o caminh da imagem alt é alternativo -->
+        <p>@daniel_coelho70</p>
+      </div>
+      <div id="switch" onclick="toggleMode()">
+        <!--esse elemento de switch eu quero que ele execute  uma função então eu adicionar onclick-->
+        <!--tag de botão-->
+        <button></button>
+        <span></span>
+      </div>
+      <ul>
+        <!--UL é uma lista não ordenada que não tem uma ordem especifica  LI cria os pontos eu coloco # quer dizer que ele não vai encaminhar para lugar nem um OL é uma lista é uma lista ordenada-->
+        <li>
+          <a href="https://rocketseat.com.br/explorer">Inscrever-se no NLW</a>
+        </li>
+        <li>
+          <a href="#">Baixe meu E-book</a>
+        </li>
+        <li>
+          <a href="https://github.com/DRCGT">Veja meu Portifólio</a>
+        </li>
+        <li>
+          <a href="https://rocketseat.com.br/explorer" target="_blank"
+            >Conheça o Explorer
+          </a>
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="https://github.com/DRCGT" target="_blank"
+          ><!--eu quero que quando ele clicasse no link ele não saisse da minha pagina então eu adiciono um target _blank-->
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="https://www.youtube.com/" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+
+        <a href="https://br.linkedin.com/" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+      <footer>
+        <!--usando rodapé-->
+        Feito com ❤ pela <a href="https://rocketseat.com.br/">Rocketseat</a>
+      </footer>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!--adicionando icones de redes social no meu background com ionicons escrvendo esse script depois usando as tags para cada atalho de icone que eu quero conforme esta mostrando na div social--links-->
+    <script src="./script.js"></script>
+    <!-- o src dentro do começo da tag é para procurar o arquivo onde esta a minha programação-->
+  </body>
+</html>

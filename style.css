@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*usando seletor root*/
+
+/*usando seletor por padrão root que por padrão vai deixar todo meu conteúdo de texto da cor branca que eu usar essa variavel*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+/* Essas propriedades que você mostrou são variáveis CSS personalizadas, definidas dentro de seletores :root e .light. Elas servem para facilitar o reuso de valores no seu CSS e para permitir a troca dinâmica de temas (como tema claro e escuro). */
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+} /*coolor e configuração e fonte*/
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+
+  padding: 0 24px; /*coloco um preenchimento para meu conteiner dos lados*/
+} /*confiigurações de caixa de foto*/
+
+/*PROFILE*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+} /* configurações de tamanho de imagem*/
+
+#profile p {
+  /*configuração da altura da linha do nome*/
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*forma de alinhar elementos colocando uma borda para descobrir onde esta me elemento switch, depois eu entro com o elemento position colocando relative para deixar dentro da relação de onde tiver meu switch*/
+#switch {
+  /*border: 1px solid red;*/
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+/*SWITCH*/
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /*quando eu falo que a sobreposição de uma mesma estilização de tag imediatamentte ele vai fazer uma sobreposição de camada entãoo o track(span) vai ficar em cima do button */
+  /*top: 0;
+  left: 0; eu colocando o position absolute libera varias propriedades de estilização sendo ele top e left sendo qeu meu button pode andar por qualquer luugar da nossa pagina 
+  bottom: 0;*/
+
+  top: 50%; /*coloquei o button para se posicionar 50% do topo*/
+  left: 0;
+  z-index: 1; /*com o z-index eu consigo colocar 1 andar a cima do track(span) sobrepondo o track se eu colocar 0 como padrão vai ficar decidindo quem vai ficar naquele andar então vai ficar meio embaçado é o position absolute que libera essa propriedade*/
+
+  /* para posicionar o elemento button dentro do track ele tem uma ideia de transformação que usamos o transform onde ele aceita um monte de propriedades de transformação de elemento*/
+  transform: translateY(
+    -50%
+  ); /* essa propriedade que vamos usar ele é transformado atrvés do eixo Y que transforma ele para cima ou para baixo, caso eu colocar ele -100% para cima ele vai ficar no topo da caixa do switch quue aque achamos com a borda vermelha*/
+}
+
+.light #switch button {
+  right: 0;
+  left: initial; /* quando eu coloco o left assim eu coloco o left para voltar para sua maneira inicial para a direia */
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links - lista*/
+ul {
+  list-style: none;
+
+  display: flex; /*peguei a propriedade pai que é o desenho de todos os botões coloquei como um ajuste flexivell das coisas */
+  flex-direction: column; /*coloquei paa ajustar como uma coluna */
+  gap: 16px; /* e coloquei umm gap que tem o tamanho de espaço entre os botões de 16px esse tamanho em px eu peguei na demonstração do figma*/
+
+  padding: 54px 0;
+}
+
+ul li a {
+  /*configurações da li*/
+  /*  border: 1px solid red; como eu ja alinhei meu botão eu posso tirar a borda*/
+
+  display: flex; /* faz sentidos pois fas coom que o a do LI ocupe todo o espaço disponivel*/
+  justify-content: center;
+  /*vai pegar o coonteudo e vai alinhar ao meio, se eu colocar, no caso commo esta as propriedades que eu escrevi vai deixar o display a flexiveis e o colum vai colocar como coluna fazendo o justify-cooontent alinhar a escrita no centro mas também da para resolver colocando a situação em duas propriedades como colocar o display: block e colocando mais uma propriedade em text-align: center*/
+
+  align-items: center; /*aliinha os itens ao meio da caixa quando a gente coloca uma altura existe uma linha imaginaria que passa no meio do elemento e essa propriedade alinha os itens no meio da caixa*/
+
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px; /*propriedade que da aquele efeito de arredondamento nas bordas do border */
+  backdrop-filter: blur(4px);
+
+  text-decoration: none; /*tira a linha que fica en baixo da escrita none, o line-through coloca uma linha ao meio da escrita, o overline fica em cima da escrita*/
+  font-weight: 500;
+
+  transition: background 0.2s; /*vai transicionar em 5segundos all quer diizer que ele vi fazer com todas as propriedades mas oque eu realmente quero é que ele transicione só o background eu só troco o all po bakcground*/
+} /*coloquei borda para entender onde vai ser desenhada os botões*/
+
+/* :hover após o seletor ul li(a) é um pseudo-selector nesse seletor pseudoo só vai aparecer caso nós passarmos o mouse emm cima*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center; /* justificando o centro dos icones*/
+  gap: 16px; /*espaçamento entre os elementos, além do espaçamento ntre eles tem uma espaço que tem da caixa dos elementos que é o mesmo tamanho*/
+
+  padding: 24px 0; /*preenchimento na caixa*/
+
+  font-size: 24px; /*tamanho de cada icone largura e altura*/
+}
+#social-links a {
+  display: flex; /*display flexivel*/
+  align-items: center; /*alinhando no centro os itens no caso os icones dentro da balinha onde vai aparecer quando passar com mouse em cima */
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s; /*transição*/
+  border-radius: 50%; /* border raius de 50 por cento é uma bola perfeita */
+}
+#social-links a:hover {
+  /*para fazer o efeito quando eu passar com o mouse pelo icone-link*/
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
