@@ -14,7 +14,7 @@ function toggleMode() {
   se tiver sem light mode vai manter a imagem normal */
 
   const img = document.querySelector("#profile img")
-  //query selector é um comando que faz pesquisar pelo seletor pois é o mesmo seletor que usamos para colocar o tamanho da imagem profile img
+  //query selector é um comando que faz pesquisar pelo seletor pois é o mesmo seletor que usamos para colocar o tamanho da imagem profile img maus
 
   if (html.classList.contains("light")) {
     img.setAttribute("src", "./assets/avatar-light.png")

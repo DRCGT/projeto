@@ -169,7 +169,7 @@ ul li a:hover {
   /*para fazer o efeito quando eu passar com o mouse pelo icone-link*/
   background: var(--highlight-color);
 }
-
+/**/
 footer {
   padding: 24px;
   text-align: center;
