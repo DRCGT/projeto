@@ -94,8 +94,10 @@ body * {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial; /* quando eu coloco o left assim eu coloco o left para voltar para sua maneira inicial para a direia */
+  animation:;
+
+  /* right: 0; não vou usar mis essas linhas de animação mas vou usar um animation 
+  left: initial;  quando eu coloco o left assim eu coloco o left para voltar para sua maneira inicial para a direia */
 }
 
 #switch span {
@@ -189,3 +191,13 @@ footer {
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
 }
+
+/*animation */ /*at roll chamado keyframes*/
+@keyframes slide-in {
+  from {
+    left: 0; /*vai começar no 0*/
+  }
+  to {
+    left: 50%; /* e terminar em 50% o slide*/
+  }
+} /* esssa ,ovimentação no slide vai acontecer quanndo estiver no light*/
